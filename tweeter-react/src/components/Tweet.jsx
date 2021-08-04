@@ -1,24 +1,24 @@
 import "./Tweet.css"
 
 export default function Tweet(props) {
-
+  const { name, handle, profile_image, text, date } = props
   return (
-    <article class="tweet"><header class="tweet--header">
-      <img class="tweet--avatar" src="https://i.imgur.com/73hZDYK.png" />
-      <h2 class="tweet--name">Newton</h2>
-      <small class="tweet--handle">@SirIsaac</small>
+    <article className="tweet"><header className="tweet--header">
+      <img className="tweet--avatar" src={profile_image} />
+      <h2 className="tweet--name">{name}</h2>
+      <small className="tweet--handle">{handle}</small>
     </header>
 
-      <div class="tweet--body">
-        <p>If I have seen further it is by standing on the shoulders of giants</p>
+      <div className="tweet--body">
+        <p>{text}</p>
       </div>
 
-      <footer class="tweet--footer">
-        <small class="footer--age">10 days ago<small>
-          <span class="footer--actions">
-            <a href="#"><i class="fa fa-flag"></i></a>
-            <a href="#"><i class="fa fa-retweet"></i></a>
-            <a href="#"><i class="fa fa-heart"></i></a>'
+      <footer className="tweet--footer">
+        <small className="footer--age">{date}<small>
+          <span className="footer--actions">
+            <a href="#"><i className="fa fa-flag"></i></a>
+            <a href="#"><i className="fa fa-retweet"></i></a>
+            <a href="#"><i className="fa fa-heart"></i></a>'
           </span>
         </small></small>
       </footer>
