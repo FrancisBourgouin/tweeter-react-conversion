@@ -36,12 +36,12 @@ function App() {
     />
   ))
 
-  const addNewTweet = () => {
+  const addNewTweet = (text) => {
     const newTweet = {
-      name: "Amy Mansell",
-      handle: "@heyitsamy",
+      name: "Francis Bourgouin",
+      handle: "@Cadaei",
       profile_image: "https://i.imgur.com/73hZDYK.png",
-      text: "What do you think of triangles?",
+      text,
       date: "5 days ago"
     }
 
@@ -49,11 +49,11 @@ function App() {
   }
 
   return (
-    <div className="App" onClick={addNewTweet}>
+    <div className="App">
       <Navigation />
       <Profile />
       <main className="container">
-        <TweetForm />
+        <TweetForm addNewTweet={addNewTweet} />
         <section className="tweets">
           {/* Pre mapping */}
           {/* <Tweet
