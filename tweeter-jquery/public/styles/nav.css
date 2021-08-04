@@ -9,11 +9,13 @@ nav {
   padding: 1.5em 1.5em;
   width: 100%;
   height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
 .nav--text {
-  float: left;
   margin-left: 10px;
   font-size: 1.5em;
   font-family: 'Bungee', cursive;
@@ -26,7 +28,6 @@ nav {
   right: 2.5em;
   cursor: pointer;
   color: #fff;
-  float: right;
   text-decoration: none;
 }
 
