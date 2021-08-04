@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import './App.css';
 import Navigation from './components/Navigation';
 import Profile from './components/Profile';
 import Tweet from './components/Tweet';
 import TweetForm from './components/TweetForm';
 
-const tweetData = [
+const initialTweetData = [
   {
     name: "Francis Bourgouin",
     handle: "@Cadaei",
@@ -22,6 +23,7 @@ const tweetData = [
 ]
 
 function App() {
+  const [tweetData, setTweetData] = useState(initialTweetData)
 
   const tweets = tweetData.map((tweet, index) => (
     <Tweet
@@ -34,8 +36,20 @@ function App() {
     />
   ))
 
+  const addNewTweet = () => {
+    const newTweet = {
+      name: "Amy Mansell",
+      handle: "@heyitsamy",
+      profile_image: "https://i.imgur.com/73hZDYK.png",
+      text: "What do you think of triangles?",
+      date: "5 days ago"
+    }
+
+    setTweetData([newTweet, ...tweetData])
+  }
+
   return (
-    <div className="App">
+    <div className="App" onClick={addNewTweet}>
       <Navigation />
       <Profile />
       <main className="container">
